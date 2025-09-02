@@ -21,7 +21,7 @@ const server = http.createServer(app);
 // ✅ Allowed origins (local + deployed frontend)
 const allowedOrigins = [
   'http://localhost:5173', // local frontend
-  'https://blood-manangement.vercel.app' // deployed frontend
+  'https://blood-donation-lovat.vercel.app' // deployed frontend
 ];
 
 app.use(cors({
