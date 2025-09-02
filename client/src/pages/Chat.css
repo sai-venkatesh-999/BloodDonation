@@ -1,0 +1,117 @@
+/* --- Chat Window Styling --- */
+
+.chat-window {
+    width: 100%;
+    max-width: 800px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--box-bg-light) !important;
+    border-radius: 12px !important;
+}
+
+html.is-dark .chat-window {
+    background: var(--box-bg-dark) !important;
+}
+
+.chat-header {
+    background: #263238;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+html.is-dark .chat-header {
+    background: #37474f;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message-container {
+    height: 100%;
+    width: 100%;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#you {
+    justify-content: flex-end;
+}
+
+#you .message-content {
+    background-color: #3498db;
+    color: white;
+    border-radius: 12px 0px 12px 12px;
+}
+
+#other {
+    justify-content: flex-start;
+}
+
+#other .message-content {
+    background-color: #f1f0f0;
+    color: #333;
+    border-radius: 0px 12px 12px 12px;
+}
+
+html.is-dark #other .message-content {
+    background-color: #4a4a4a;
+    color: #f1f0f0;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 0.7rem 1rem;
+    word-wrap: break-word;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+html.is-dark .chat-footer {
+    border-top-color: #444;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-light);
+}
+
+html.is-dark .chat-footer input {
+    color: var(--text-dark);
+}
+
+.chat-footer input:focus {
+    outline: none;
+}
+
+.chat-footer button {
+    width: 50px;
+    border: none;
+    background: #3498db;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.chat-footer button:hover {
+    background: #2980b9;
+}

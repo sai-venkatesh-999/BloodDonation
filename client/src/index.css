@@ -1,0 +1,126 @@
+/* --- FINAL FORCEFUL & POLISHED THEME --- */
+
+:root {
+    /* --- Light Mode Palette --- */
+    --gradient-light-1: #e9f7ff;
+    --gradient-light-2: #d4eefc;
+    --text-light: #3a506b;
+    --title-light: #0b132b;
+    --subtitle-light: #5c677d;
+    --box-bg-light: #ffffff;
+    --box-shadow-light: rgba(44, 62, 80, 0.12);
+    --navbar-bg-light: rgba(255, 255, 255, 0.75);
+    --navbar-text-light: #1c2541;
+    --accent-color: #007bff;
+    --accent-color-hover: #0056b3;
+
+    /* --- Dark Mode Palette --- */
+    --gradient-dark-1: #1f2937;
+    --gradient-dark-2: #111827;
+    --text-dark: #a0aec0;
+    --title-dark: #f7fafc;
+    --subtitle-dark: #95a5a6;
+    --box-bg-dark: #2d3748;
+    --box-shadow-dark: rgba(0, 0, 0, 0.2);
+    --navbar-bg-dark: rgba(22, 34, 42, 0.75);
+    --navbar-text-dark: #f7fafc;
+    --accent-glow-dark: rgba(0, 198, 255, 0.4);
+}
+
+/* --- LAYOUT & GRADIENT BACKGROUND --- */
+body {
+    padding-top: 52px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    background-size: 200% 200%;
+    animation: gradientFlow 20s ease infinite;
+    transition: background 0.4s ease;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+main { display: flex; flex-grow: 1; }
+.section { width: 100%; padding: 3rem 1.5rem; align-items: center; justify-content: center; display: flex; }
+
+/* --- THEME APPLICATION (LIGHT MODE) --- */
+body {
+    background-image: linear-gradient(-45deg, var(--gradient-light-1), var(--gradient-light-2));
+    color: var(--text-light);
+}
+.navbar {
+    background: var(--navbar-bg-light) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.navbar-item, .navbar-burger { color: var(--navbar-text-light) !important; }
+#themeSwitch + label .icon { color: var(--navbar-text-light) !important; }
+.box, .card {
+    background-color: var(--box-bg-light) !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08) !important;
+}
+.title, .label, .content p strong, .content strong { color: var(--title-light) !important; }
+.subtitle, .content p, .content div, .content label, .help { color: var(--text-light) !important; }
+.tag { color: white !important; }
+
+/* --- DARK MODE OVERRIDES --- */
+html.is-dark body {
+    background-image: linear-gradient(-45deg, var(--gradient-dark-1), var(--gradient-dark-2));
+    color: var(--text-dark);
+}
+html.is-dark .navbar { background: var(--navbar-bg-dark) !important; }
+html.is-dark .navbar-item, html.is-dark .navbar-burger { color: var(--navbar-text-dark) !important; }
+html.is-dark #themeSwitch + label .icon { color: #ffffff !important; }
+html.is-dark .box, html.is-dark .card {
+    background-color: var(--box-bg-dark) !important;
+    box-shadow: 0 5px 25px var(--box-shadow-dark) !important;
+}
+html.is-dark .title, html.is-dark .label, html.is-dark .content p strong, html.is-dark .content strong { color: var(--title-dark) !important; }
+html.is-dark .subtitle, html.is-dark .content p, html.is-dark .content div, html.is-dark .content label, html.is-dark .help { color: var(--text-dark) !important; }
+
+/* --- BUTTONS & HOVER EFFECTS (FORCEFUL VERSION) --- */
+.button {
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.button:hover, .button:focus {
+    transform: translateY(-2px);
+    box-shadow: none !important; /* Forcefully remove any default shadow */
+}
+
+.button.is-primary {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+.button.is-primary:hover {
+    background-color: var(--accent-color-hover) !important;
+}
+
+html.is-dark .button:hover, html.is-dark .button:focus {
+    box-shadow: 0 0 15px var(--accent-glow-dark) !important;
+}
+html.is-dark .button.is-primary:hover {
+    box-shadow: 0 0 15px var(--accent-glow-dark) !important;
+}
+
+/* --- OTHER COMPONENT STYLES --- */
+.dashboard-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dashboard-card:hover {
+    transform: translateY(-8px);
+}
+.dashboard-card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
